@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Map and review OpenAI plugin data boundaries, visibility, retention, logging, and confirmation evidence.">
+  <meta name="theme-color" content="#111315"><title>Plugin Data Boundary Studio</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#workspace">Skip to workspace</a>
+  <header class="topbar"><a class="brand" href="./" aria-label="Plugin Data Boundary Studio home"><img src="icon.svg" alt=""><span>Plugin Data Boundary Studio</span></a><nav aria-label="Page controls"><button id="theme" class="ghost" type="button">Use light theme</button><a href="https://github.com/Huzaifa-Asif/plugin-data-boundary-studio">Source</a></nav></header>
+  <main id="workspace">
+    <section class="hero"><div><span class="eyebrow">Local-first technical evidence</span><h1>Make every data boundary explicit before release.</h1><p>Inventory what each tool moves, who can see it, why it is needed, how long it remains, and which actions require confirmation. This studio is not a privacy-policy generator or legal advice.</p></div><div class="hero-actions"><button id="sample" class="primary" type="button">Load safe sample</button><label class="file-button">Import JSON<input id="file" type="file" accept="application/json,.json"></label></div></section>
+    <section class="notice" aria-label="Privacy notice"><strong>Describe fields, never paste records.</strong><span>Processing stays in this browser. No telemetry or third-party code. GitHub Pages logs ordinary request metadata.</span></section>
+    <div class="layout">
+      <section class="panel editor" aria-labelledby="inventory-title"><div class="section-head"><div><span class="eyebrow">Technical inventory</span><h2 id="inventory-title">Data flows</h2></div><button id="add" type="button">Add data flow</button></div>
+        <div class="grid three project-fields"><label>Project name<input id="project" maxlength="120" autocomplete="off"></label><label>Published HTTPS privacy URL<input id="privacy-url" type="url" maxlength="500" autocomplete="off"></label><label>Security contact or process<input id="security-contact" maxlength="300" autocomplete="off"></label></div>
+        <div id="flows" class="cards"></div>
+      </section>
+      <aside class="panel audit" aria-labelledby="status-title"><div id="status" data-ready="false" role="status" aria-live="polite" aria-atomic="true"><span class="eyebrow">Automated review</span><h2 id="status-title">No flows loaded</h2><p id="status-copy">Resolve blocking findings before exporting evidence.</p><ul id="findings" class="findings"></ul></div><div class="stack"><button id="export-json" class="primary" type="button" disabled>Export boundary JSON</button><button id="export-report" type="button">Export review report</button><button id="clear" class="ghost" type="button">Clear</button><button id="undo" class="ghost" type="button" hidden>Undo clear</button></div><p class="small">Passing these narrow checks is not certification. Review actual code, scopes, logs, retention controls, deletion behavior, disclosures, and applicable requirements.</p></aside>
+    </div>
+  </main>
+  <footer><span>MIT licensed · v0.1.0</span><span>Technical inventory, not legal advice.</span></footer>
+  <script type="module" src="src/app.mjs"></script>
+</body></html>
